@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Fresh Air</title>
+	<link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/weather-css/weather-icons.min.css">
+  <link href="/general_css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  		<ul id="head" class="headerul">
+		  <li style="float:right"><a href="default.html#head">Home</a></p>
+		  <li class="dropdown">
+		    <a href="javascript:void(0)" class="category">Javascript</a>
+		    <div class="dc">
+		      <a href="www.haavindberman.com/CloudGenerator.html">Cloud Generator</a>
+		      <a href="www.haavindberman.com/hexmine.html">Koorma's Flowers</a>
+		      <a href="www.haavindberman.com/travTime.html">Travel Times</a>
+		      <a href="www.haavindberman.com/MoneyScroll.html">Money Scroll</a>
+		      <a href="www.haavindberman.com/mbtaPct.html">MBTA Percent</a>
+		      <a href="www.haavindberman.com/changeHighlighter.html">Change Highlighter</a>
+		    </div>
+		  </p>
+		  <li class="dropdown">
+		    <a href="javascript:void(0)" class="category">Stata</a>
+		    <div class="dc">
+		      <a href="bgshade.html">Bgshade</a>
+		    </div>
+		  </p>
+		  <li class="dropdown">
+		    <a href="javascript:void(0)" class="category">Brothers</a>
+		    <div class="dc">
+		      <a href="www.haavindberman.com/aboutMe.html">Eric</a>
+		      <a href="www.haavindberman.com/daleHome.html">Dale</a>
+		      <a href="www.haavindberman.com/russHome.html">Russ</a>
+		      <a href="www.haavindberman.com/snowHome.html">Snowbear</a>
+		    </div>
+		  </p>
+		</ul>
+	<!-- <p>Do not use until Challenge #12</p>
+     <form action="/name" method="post">
+      <label>First Name :</label>
+      <input type="text" name="first" value="John"><br>
+      <label>Last Name :</label>
+      <input type="text" name="last" value="Doe"><br><br>
+      <input type="submit" value="Submit">
+    </form>  -->
+    <h1>Weather Flow</h1>
+
+	<div id="container" class="container">
+		<div id="top-row">
+			<div id="primary">
+				<p id="temp"></p>
+        <p id="name"></p>
+			</div>
+			<div id="location">
+        <p id="locationText"></p>
+        <input id="searchInput" type="text" placeholder="Enter a location">
+			</div>
+			<div id="secondary">
+				<p id="precip"></p>
+			</div>
+		</div>
+
+    <div id="weather-holder">
+		  <canvas id="weather"></canvas>
+    </div>
+    
+		<div id="bottom-row">
+		</div>
+	</div>
+
+  <hr id="break-line">
+  
+  <div id="description-container">
+    <button id="back" onclick="window.location.href='http://www.haavindberman.com';"> Back to haavindberman.com</button>
+    <p>
+      This is a work in progress and meant to be similar to the Fresh Air iPhone app which is no longer updated. 
+    </p>
+    <p >
+      I am using the climacell API for daily and hourly forecasts, google maps places API for location search, weather icons from <a href="http://erikflowers.github.io/weather-icons">Erik Flowers</a>, and a Node.js backend via <a href = "repl.it">repl.it</a>. 
+    </p>
+    <p>
+      There are still many things to do, but I think this is a working minimum product. Some of the things that I will update in the future include: 
+    </p>
+    <p class="description">- Updating background color based on time of day and cloud cover (I'm already bringing in those varibales from Climacell's API, but have not implented the background coloring)
+    </p>
+    <p class="description">
+      - Making colors gradient instead of flat 
+    </p>
+    <p class="description">
+      - Allowing users to swtich between Farenheit and Celsius, between temperature, wind speed, and feels like, and between precipitation, humidity, and cloud cover. 
+    </p>
+    <p class="description">
+      - Including high and low termperatures (or wind speed or feels like) for the day at the top with the temperature
+    </p>
+    <p class="description">
+      - Showing where the user is on the graph at all times with a dot at the data value 
+    </p>
+    <p class="description">
+      - Highlighting the precipitation (or humidity or cloud cover) percentage in the circle in the top right 
+    </p>
+    <p class="description">
+      - Showing moon phases and sunrise and sunset times via dotted lines in the graph 
+    </p>
+    <p class="description">
+      - Stopping day break lines at the top of the temperature data instead of at the top of the canvas 
+    </p>
+    <p class="description">
+      - Interpolate between hourly data so that users can see minute-by-minute statistics 
+    </p>
+    <p class="description">
+      - Break away from the mobile-first design and find a way to show and interact with the weather cleanly and beautifully on desktop
+    </p>
+    <p>
+      So, as you can see there is still much to do, but I am excited to keep improving and this has definitely been a fun project so far! 
+    </p>
+  </div>
+</body>
+
+<!-- <script src="https://d3js.org/d3.v6.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script> 
+<script src="/freshAir.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjhJeQJF7oiWBPSQhKbyFQRBuepLRgzao&libraries=places">
+</script>
+
+<script src="/location.js"></script>
+
+<footer>
+  <ul class="footerul">
+    <li float="left">Author: Eric Haavind-Berman<br>
+    Contact: ehaavindberman@gmail.com</p>
+    <li style="float:right"><a href="www.haavindberman.com/aboutMe.html">About Me</a></p>
+  </ul>
+</footer>
+
+</html>
