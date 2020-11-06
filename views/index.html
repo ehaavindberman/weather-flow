@@ -68,55 +68,55 @@
     <div id="weather-holder">
 		  <canvas id="weather"></canvas>
     </div>
-    
+
 		<div id="bottom-row">
 		</div>
 	</div>
 
   <hr id="break-line">
-  
+
   <div id="description-container">
     <button id="back" onclick="window.location.href='http://www.haavindberman.com';"> Back to haavindberman.com</button>
     <p>
-      This is a work in progress and meant to be similar to the Fresh Air iPhone app which is no longer updated. 
+      This is a work in progress and meant to be similar to the Fresh Air iPhone app which is no longer updated.
     </p>
     <p >
-      I am using the climacell API for daily and hourly forecasts, google maps places API for location search, weather icons from <a href="http://erikflowers.github.io/weather-icons">Erik Flowers</a>, and a Node.js backend via <a href = "repl.it">repl.it</a>. 
+      I am using the climacell API for daily and hourly forecasts, google maps places API for location search, weather icons from <a href="http://erikflowers.github.io/weather-icons">Erik Flowers</a>, and a Node.js backend via <a href = "repl.it">repl.it</a>.
     </p>
     <p>
-      There are still many things to do, but I think this is a working minimum product. Some of the things that I will update in the future include: 
+      There are still many things to do, but I think this is a working minimum product. Some of the things that I will update in the future include:
     </p>
     <p class="description">- Updating background color based on time of day and cloud cover (I'm already bringing in those varibales from Climacell's API, but have not implented the background coloring)
     </p>
     <p class="description">
-      - Making colors gradient instead of flat 
+      - Making colors gradient instead of flat
     </p>
     <p class="description">
-      - Allowing users to swtich between Farenheit and Celsius, between temperature, wind speed, and feels like, and between precipitation, humidity, and cloud cover. 
+      - Allowing users to swtich between Farenheit and Celsius, between temperature, wind speed, and feels like, and between precipitation, humidity, and cloud cover.
     </p>
     <p class="description">
       - Including high and low termperatures (or wind speed or feels like) for the day at the top with the temperature
     </p>
     <p class="description">
-      - Showing where the user is on the graph at all times with a dot at the data value 
+      - Showing where the user is on the graph at all times with a dot at the data value
     </p>
     <p class="description">
-      - Highlighting the precipitation (or humidity or cloud cover) percentage in the circle in the top right 
+      - Highlighting the precipitation (or humidity or cloud cover) percentage in the circle in the top right
     </p>
     <p class="description">
-      - Showing moon phases and sunrise and sunset times via dotted lines in the graph 
+      - Showing moon phases and sunrise and sunset times via dotted lines in the graph
     </p>
     <p class="description">
-      - Stopping day break lines at the top of the temperature data instead of at the top of the canvas 
+      - Stopping day break lines at the top of the temperature data instead of at the top of the canvas
     </p>
     <p class="description">
-      - Interpolate between hourly data so that users can see minute-by-minute statistics 
+      - Interpolate between hourly data so that users can see minute-by-minute statistics
     </p>
     <p class="description">
       - Break away from the mobile-first design and find a way to show and interact with the weather cleanly and beautifully on desktop
     </p>
     <p>
-      So, as you can see there is still much to do, but I am excited to keep improving and this has definitely been a fun project so far! 
+      So, as you can see there is still much to do, but I am excited to keep improving and this has definitely been a fun project so far!
     </p>
   </div>
 </body>
@@ -124,10 +124,10 @@
 <!-- <script src="https://d3js.org/d3.v6.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js">
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
 <script src="/freshAir.js"></script>
 <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjhJeQJF7oiWBPSQhKbyFQRBuepLRgzao&libraries=places">
+    src="https://maps.googleapis.com/maps/api/js?key=process.env.GMAPS_API_KEY">
 </script>
 
 <script src="/location.js"></script>
